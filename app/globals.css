@@ -1,0 +1,681 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --main: #f06aff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+  color:white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+main{
+  margin: 0px 5vw;
+}
+
+/*Standard styles*/
+
+.sb{
+  border-radius: 3px;
+  padding: 5px 10px;
+  color:white;
+  background-color: black;
+}
+
+.sb,.fade{
+  opacity: 1;
+  transition: opacity .1s;
+}
+
+.sb:hover, .fade:hover{
+  opacity: .8;
+}
+
+input{
+  outline: none;
+  padding: 3px 6px;
+  background-color: lightgrey;
+  transition: all .1s;
+  margin: 10px;
+  color: black
+}
+
+input:focus{
+  background-color: white;
+}
+
+.gob{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+}
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  color: black;
+}
+
+/**/
+
+
+h2{
+  margin-top: 30px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.row1 p{
+  color: lightgrey
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+@media only screen and (max-width: 1024px) {
+  /* Your phone-specific styles go here */
+  .logos-row .cross-icon, .logos-row .second-image{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  /* Your tablet-specific styles go here */
+  .row1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .row1 .col1{
+    margin-top: 100px;
+  }
+}
+
+
+
+.row1 .col1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row1 .col1 label{
+  margin-top: 20px;
+  font-size: 16px;
+  color: lightgrey
+}
+
+.logos-row{
+  display: flex;
+  align-items: center;
+}
+
+.logos-row .cross-icon{
+  margin: 20px;
+  font-size: 40px;
+}
+
+/*quantum circuit styles*/
+
+.qc-line{
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  position: relative;
+}
+
+.qc-line .horizline, .qc-line .horizline2{
+  background-color: white;
+  height: 3px;
+  display: block;
+}
+
+.qc-line:nth-child(2){
+  transform: translateX(10px);
+}
+
+@keyframes firstcircuit {
+  0%{ width: 100px;}
+  50%{ width: 120px; }
+  100%{ width: 100px }
+}
+
+@keyframes secondcircuit {
+  0%{ width: 60px;}
+  50%{ width: 40px; }
+  100%{ width: 60px }
+}
+
+@keyframes thirdcircuit {
+  0%{ width: 140px;}
+  50%{ width: 160px; }
+  100%{ width: 140px }
+}
+
+.qc-line:nth-child(1) .horizline{
+  animation: firstcircuit 2s infinite;
+}
+.qc-line:nth-child(2) .horizline{
+  animation: secondcircuit 2.5s infinite;
+}
+.qc-line:nth-child(3) .horizline{
+  animation: thirdcircuit 1.7s infinite;
+}
+
+.qc-line:nth-child(1) .horizline2{
+  width: 50px;
+  transform: translateX(-65px);
+}
+
+.qc-line:nth-child(2) .horizline2{
+  width: 100px;
+  transform: translateX(-65px);
+
+}
+.qc-line:nth-child(3) .horizline2{
+  width: 50px;
+}
+
+.qc-line .gate{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid grey;
+  font-size: 20px;
+  z-index: 2;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+.qc-line .verticalline{
+  /* position: absolute; */
+  background-color: white;
+  height: 3px;
+  display: block;
+  width: 50px;
+  z-index: 1;
+  transform:  translateX(-45px) rotate(90deg) translateX(25px);
+  /* border: 1px solid black; */
+}
+
+.qc-line .dot{
+  transform: translate(-77.5px,50px);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.coords{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 230px;
+}
+
+.coords .date{
+  margin-top: 20px;
+  display: flex;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.coords .date .calendar-icon{
+  color: var(--main);
+  margin-right: 5px;
+}
+
+.coords p{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.row1 p .location-icon{
+  color: green;
+  margin-right: 5px;
+}
+
+
+
+/**/
+
+.row2 p{
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: lightgrey
+}
+
+.row3{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.row3 .single-point{
+  display: flex;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.row3 label{
+  color: var(--main);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.row4 h3{
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.single-faq{
+  padding: 10px 15px;
+  background-color: white;
+  color:black;
+  text-align: left;
+  border-radius: 5px;
+  width: 100%;
+  transition: all .1s;
+  margin: 10px 0px;
+}
+
+.single-faq .question{
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.single-faq p{
+  margin-top: 10px;
+}
+
+.single-faq:hover{
+  box-shadow: 0px 0px 10px lightgrey;
+}
+
+/**/
+header{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+  border-bottom: var(--main) solid 3px;
+}
+
+h1{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+header{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  position: sticky;
+  top: 0px;
+  background-color: black;
+  z-index: 3;
+}
+
+.menu-button{
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Your phone-specific styles go here */
+  .menu-button {
+    display: block;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 1px 3px;
+  }
+
+  .menu{
+    grid-column: 1/4;
+    padding: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu .menu-link{
+    min-height: 40px;
+  }
+}
+
+
+.menu-link{
+  margin: 0px 20px;
+}
+
+@keyframes flash-button {
+  0% {background-color: white;}
+  80% {
+    background-color: white;
+    color:black
+  }
+  90% {
+    background-color: var(--main);
+    color: white;
+  }
+  100% {
+    background-color: white;
+    color: black
+  }
+}
+
+.apply-button{
+  transition: all .2s;
+  background-color: white;
+  color:black;
+  padding: 8px 10px;
+  font-weight: bold;
+  animation: flash-button 2s infinite;
+}
+
+
+/* Login Page */
+#login-form{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid grey; */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+#login-form h3{
+  font-size: 40px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.error{
+  color: red;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.toggle-login{
+  font-weight: bold;
+  color: white;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.login-button{
+  color: black;
+  background-color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.logout-button{
+  color:red;
+  transition: all .1s;
+}
+
+.logout-button:hover, .login-button:hover{
+  opacity: .8;
+}
+
+
+/**/
+
+.application-header{
+  margin: 20px 0px;
+  border-bottom: 2px solid white;
+}
+
+.app-question{
+  margin-top:20px;
+  margin-bottom: 50px;
+}
+.app-question h5{
+  font-weight: bold;
+  font-size: 18px;
+  margin: 2px 10px;
+}
+
+.mc{
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 2px solid grey;
+  margin: 20px;
+  position: relative;
+}
+
+.mc-chosen{
+  /* display: none; */
+}
+
+.mc-choices{
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  z-index: 10;
+  width: 90%;
+  padding: 0px 10px;
+  background-color: white;
+}
+
+.mc-choices button{
+  padding: 5px 0px;
+  text-align: left;
+  width: 100%;
+  color: black;
+  border-bottom: 1px solid gray;
+}
+
+.mc-choices button:nth-last-child(1){
+  border-bottom: none;
+}
+
+.mc:hover .mc-choices{
+  display: flex;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.mc-choices button:hover{
+  opacity: .7;
+}
+
+.save-for-later,  .submit{
+  padding: 8px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 20px;
+  color:black;
+  transition: all .1s;
+}
+
+.save-for-later:hover,  .submit:hover{
+  opacity: .8;
+}
+
+@media only screen and (max-width: 767px) {
+  /* Your phone-specific styles go here */
+
+  .popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80vw;
+  }
+
+  .submitPopup .save-for-later, .submitPopup .submit {
+    margin: 10px;
+  }
+}
+
+.save-for-later{
+  background-color: rgb(209, 209, 209);
+}
+
+.submit{
+  background-color: var(--main);
+}
+
+.popup.error{
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup.error button{
+  margin: 10px;
+}
+
+
+.submitted h3{
+  font-size: 30px;
+  margin: 20px 0px;
+  font-weight: bold;
+}
+
+.submitted p{
+  color: rgb(197, 197, 197);
+  margin-bottom: 30px;
+}
+
+.loading{
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.formErr{
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: bold;
+}
+.formErr button{
+  margin: 10px 0px;
+}
+
+.submitPopup p{
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+/*Schedule*/
+
+#schedule h3{
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+#schedule > p {
+  color: lightgrey;
+  margin: 5px 0px;
+}
+
+#schedule h4{
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.schedule-list{
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.schedule-list li{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  color: black;
+  margin: 10px 0px;
+}
+
+.schedule-list li .time{
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.schedule-list li .title,.schedule-list li label{
+  font-weight: bold;
+}
+
+.schedule-list li label{
+  color: var(--main);
+}
+
+
+
+
+
+
+footer{
+  margin-top: 50vh;
+  border-top: var(--main) 2px solid;
+  display: flex;
+  justify-content: center;
+  color: lightgrey;
+  padding: 10px;
+}
