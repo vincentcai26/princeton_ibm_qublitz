@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
-import {faqs,bulletpoints} from "./../content/content"
+import {faqs,bulletpoints,eventName} from "./../content/content"
 
 
 export default function FrontPage(){
@@ -34,7 +34,7 @@ export default function FrontPage(){
     return <div>
         <section className="row1">
             <div>
-                <h2>QuBlitz 2024</h2>
+                <h2>{eventName} 2024</h2>
                 <p>Princeton Students in Quantum x IBM</p>
                 <QuantumCircuit></QuantumCircuit>
                 <div className="coords">

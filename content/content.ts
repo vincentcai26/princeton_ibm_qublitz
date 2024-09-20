@@ -1,9 +1,12 @@
+
+const eventName = "PSQ Fall Fest"
+
 /**
  * HOMEPAGE
  */
 
 const faqs = [{
-    question: "What is QuBlitz?",
+    question: `What is ${eventName}?`,
     answer: "It is a 24 hour long hackathon at Princeton University, focused on quantum computing challenges. This event is sponsored by IBM and a participant in IBM's global 2024 Qiskit Fall Fest."
 },
 {
@@ -123,4 +126,4 @@ const formFields = [
 ]
 
 
-export { faqs, bulletpoints,nov2,nov3,formFields }
+export { eventName,faqs, bulletpoints,nov2,nov3,formFields }

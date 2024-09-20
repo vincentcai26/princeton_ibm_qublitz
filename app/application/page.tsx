@@ -8,7 +8,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import {formFields} from "./../../content/content"
+import {formFields,eventName} from "./../../content/content"
 
 export default function Home() {
   const context = useMyContext()
@@ -192,7 +192,7 @@ export default function Home() {
   return (
     <div> 
       <div className="application-header">
-        <h2>Qublitz 2024 Application</h2>
+        <h2>{eventName} 2024 Application</h2>
       </div>
       <p>Your email is {auth.currentUser?.email}. <button className="logout-button" onClick={logout}>Logout</button></p>
 
