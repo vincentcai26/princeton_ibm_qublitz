@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { MyProvider } from "@/config/context";
 import { Instrument_Sans } from 'next/font/google'
 import Footer from "@/components/Footer";
+import {eventName} from "./../content/content"
  
 // If loading a variable font, you don't need to specify the font weight
 const instrumentsans = Instrument_Sans({ subsets: ["latin"]})
@@ -22,8 +23,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "PSQ Qiskit Fall Fest Hackathon",
-  description: "Website for PSQ's Qiskit Fall Fest Hackathon",
+  title: `${eventName} 2024`,
+  description: `Website for ${eventName}`,
 };
 
 export default function RootLayout({
@@ -34,12 +35,14 @@ export default function RootLayout({
 
   // const [isAuth,setIsAuth] = useState<boolean>(false)
 
-
   const newLocal = {}
 
   return (
     <MyProvider>
       <html lang="en">
+        <head>
+          <link rel="icon" href="/favicon.png" sizes="any" />
+        </head>
         <body
           className={`${geistSans.variable} ${geistMono.variable} ${instrumentsans.className} antialiased`}
         >

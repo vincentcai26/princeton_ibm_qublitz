@@ -1,5 +1,5 @@
 
-const eventName = "PSQ Fall Fest"
+const eventName = "QuBlitz"
 
 /**
  * HOMEPAGE
@@ -10,8 +10,8 @@ const faqs = [{
     answer: "It is a 24 hour long hackathon at Princeton University, focused on quantum computing challenges. This event is sponsored by IBM and a participant in IBM's global 2024 Qiskit Fall Fest."
 },
 {
-    question: "Where will the event take place? What are the directions there?",
-    answer: "At Princeton University's School of Engineering and Applied Sciences. Address is 33 Olden Street, Princeton, NJ, 08544."
+    question: "Where will the event take place?",
+    answer: "At Princeton University in Princeton, NJ"
 },{
     question: "How long and at what time will the event be?",
     answer: "It will be a 24-hour hackathon, from noon on November 2nd to noon on November 3rd."
@@ -20,7 +20,12 @@ const faqs = [{
     answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts "
 }]
 
-const bulletpoints = ["IBM and Qiskit Swag","Beginner and Advanced Challenges","Many Quantum Computing Workshops","Open to College and High School Students"]
+const bulletpoints = [
+    "IBM and Qiskit Swag",
+    "Beginner and Advanced Challenges",
+    "Many Quantum Computing Workshops",
+    "Open to College and High School Students"
+]
 
 /**
  * SCHEDULE
