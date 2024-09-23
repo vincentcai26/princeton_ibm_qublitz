@@ -14,16 +14,16 @@ const faqs = [{
     answer: "At Princeton University in Princeton, NJ"
 },{
     question: "How long and at what time will the event be?",
-    answer: "It will be a 24-hour hackathon, from noon on November 2nd to noon on November 3rd."
+    answer: "It will be a 24-hour hackathon, from noon on November 2nd to noon on November 3rd. In order to participate, you must attending opening and closing ceremonies (occuring 1 hour before and after hacking period)."
 }, {
     question: "What will I be doing at the hackathon?",
-    answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts "
+    answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts will be based off implementing research papers in quantum computing. "
 }]
 
 const bulletpoints = [
     "IBM and Qiskit Swag",
     "Beginner and Advanced Challenges",
-    "Many Quantum Computing Workshops",
+    "Quantum Computing Workshops",
     "Open to College and High School Students"
 ]
 
