@@ -7,7 +7,7 @@ const eventName = "QuBlitz"
 
 const faqs = [{
     question: `What is ${eventName}?`,
-    answer: "It is a 24 hour long hackathon at Princeton University, focused on quantum computing challenges. This event is sponsored by IBM and a participant in IBM's global 2024 Qiskit Fall Fest."
+    answer: "It is a 24 hour long hackathon at Princeton University, focused on quantum computing challenges. This event is supported by IBM and a participant in IBM's global 2024 Qiskit Fall Fest."
 },
 {
     question: "Where will the event take place?",
