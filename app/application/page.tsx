@@ -20,6 +20,8 @@ export default function Home() {
   const [showSubmit,setShowSubmit] = useState<boolean>(false);
   const [error,setError] = useState<boolean>(false);
   const [isSubmitted,setIsSubmitted] = useState<boolean>(false)
+  const [isShow,setIsShow] = useState<boolean>(false)
+  const [isAccepted,setIsAccepted] = useState<boolean>(false)
   const [formErr,setFormErr] = useState<boolean>(false);
 
   const changeState = (i:number,val:any) =>{
@@ -82,6 +84,8 @@ export default function Home() {
         if(docSnap.exists()){
           var data = docSnap.data()
           setForm(data["responses"])
+          setIsShow(data["isShow"])
+          setIsAccepted(data["isAccepted"])
           setIsSubmitted(data["isSubmitted"]||false)
         }
       }
@@ -182,12 +186,29 @@ export default function Home() {
   }
 
   if(isSubmitted){
+    var content = null;
+    if(isShow){
+      if(isAccepted){
+        content = <div>
+          <h3>Congratulations! You have been selected to attend QuBlitz!</h3>
+          <p>Please be on the lookout for an email from the organizers to confirm your attendance. Your email is {auth.currentUser?.email}.</p>
+        </div>
+      }else{
+        content = <div>
+          <h3>Application Status</h3>
+          <p>Thank you for applying to QuBlitz 2024. We are sorry to inform you that we are unable to have you attend our event due to limited space. We very much appreciate your interest and thank you for your application. Your email is {auth.currentUser?.email}.</p>
+        </div>
+      }
+    }else{
+      content = <div>
+        <h3>Congratulations! You have submitted your application!</h3>
+        <p>Please check back on this page in the coming weeks to view your decision. Your email is {auth.currentUser?.email}.</p>
+      </div>
+    }
     return <div className="submitted">
-      <h3>Congratulations! You have submitted your application!</h3>
-      <p>Please check back on this page in the coming weeks to view your decision. Your email is {auth.currentUser?.email}.</p>
+      {content}
       <Link href="/" className="save-for-later">Back to Homepage</Link>
       <button className="logout-button" onClick={logout}>Logout</button>
-
     </div>
   }
 

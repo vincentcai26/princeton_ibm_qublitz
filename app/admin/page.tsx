@@ -53,10 +53,10 @@ export default function index(){
         setLoading(true)
         try{
             var allDocs = await getDocs(collection(db,"applications"))
-            var thisObj = {}
+            var thisObj: Record<string,any> = {}
             var count = 0
             allDocs.forEach(doc=>{
-                var uid:string = doc.id
+                var uid = doc.id
                 thisObj[uid] = {...doc.data(),showRes: false}
                 if(thisObj[uid]["isAccepted"]) count++
             })
@@ -92,7 +92,7 @@ export default function index(){
                     {obj["showRes"]&&<ul className="responses-list">{responsesList}</ul>}
                 </button>
                 <button onClick={()=>updateAcceptanceStatus(key,!isAccepted)} className={`acceptbutton ${isAccepted?"accepted":"rejected"}`}>{isAccepted?"Reject":"Accept"}</button>
-                <button onClick={()=>updateShowStatus(key,!isShow)} className={`acceptbutton ${isAccepted?"accepted":"rejected"}`}>{isAccepted?"Hide":"Show"}</button>
+                <button onClick={()=>updateShowStatus(key,!isShow)} className={`acceptbutton ${isShow?"accepted":"rejected"}`}>{isShow?"Hide":"Show"}</button>
             </li>
         })
         return arr
