@@ -78,13 +78,7 @@ const formFields = [
     },
     {
         title:"What school do you attend?",
-        type:"mc",
-        choices:[
-        "Rutgers University - New Brunswick",
-        "The College of New Jersey",
-        "Princeton High School",
-        "Other"
-        ],
+        type:"text",
         required: true,
         dependentOn: 2, // index
         showOnAnswer: "No"
@@ -126,6 +120,20 @@ const formFields = [
         "Understand fundamentals of quantum computing",
         "I have built projects and/or conducted research in quantum computing"
         ],
+        required: true
+    },
+    {
+        title:"Will you be able to attend Princeton QuBlitz In-Person, from November 2nd to 3rd, at Princeton University in Princeton, NJ? This includes the opening and closing ceremonies at noon on November 2nd and 3rd, respectively.",
+        type:"mc",
+        choices: [
+        "Yes",
+        "No"
+        ],
+        required: true
+    },
+    {
+        title:"Any questions?",
+        type:"text",
         required: true
     },
 ]
