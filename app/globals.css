@@ -668,11 +668,11 @@ header{
 
 .single-application-container{
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
 }
 
 .acceptbutton{
-  margin-left: 20px;
+  margin: 0px 20px;
   transition: opacity .2s;
   font-weight: bold;
 }
@@ -697,15 +697,17 @@ header{
   opacity: .9;
 }
 
-
 .applications-list .single-application.accepted{
   background-color: lightgreen;
+}
+
+.applications-list .single-application.show{
+  border: 3px dashed var(--main)
 }
 
 .single-application .email{
   font-weight: bold;
 }
-
 
 .responses-list .question{
   font-weight: bold;

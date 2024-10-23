@@ -1,5 +1,6 @@
 "use client"
 
+import Loading from "@/components/Loading"
 import { auth, db } from "@/config/firebase"
 import { formFields } from "@/content/content"
 import { collection, doc, getDocs, setDoc } from "firebase/firestore"
@@ -7,17 +8,38 @@ import { useEffect, useState } from "react"
 
 export default function index(){
     const [appsObj,setAppsObj] = useState<any>({})
-    const [loading,setLoading] = useState<any>({})
+    const [loading,setLoading] = useState<boolean>(false)
+    const [acceptCount,setAcceptCount] = useState<number>(0)
 
     const updateAcceptanceStatus = async (uid:string,acceptBool:boolean) => {
         var newAppsObj = {...appsObj}
         newAppsObj[uid]["isAccepted"] = acceptBool //"isAccepted" is name of the attibute
+        setAcceptCount(acceptCount + (acceptBool?1:-1))
+        setLoading(true)
         try{
             var d = doc(db,"applications",uid)
             await setDoc(d,newAppsObj[uid])
             setAppsObj(newAppsObj)
         }catch(e){
             console.error(e)
+        }finally{
+            setLoading(false)
+        }
+    }
+
+    const updateShowStatus = async (uid:string,showBool:boolean) => {
+        var newAppsObj = {...appsObj}
+        newAppsObj[uid]["isShow"] = showBool
+        setAcceptCount(acceptCount + (showBool?1:-1))
+        setLoading(true)
+        try{
+            var d = doc(db,"applications",uid)
+            await setDoc(d,newAppsObj[uid])
+            setAppsObj(newAppsObj)
+        }catch(e){
+            console.error(e)
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -28,16 +50,23 @@ export default function index(){
     }
 
     const getApps = async () => {
+        setLoading(true)
         try{
             var allDocs = await getDocs(collection(db,"applications"))
             var thisObj = {}
+            var count = 0
             allDocs.forEach(doc=>{
                 var uid:string = doc.id
                 thisObj[uid] = {...doc.data(),showRes: false}
+                if(thisObj[uid]["isAccepted"]) count++
             })
             setAppsObj(thisObj)
+            setAcceptCount(count)
+
         }catch(e){
             console.error(e)
+        }finally{
+            setLoading(false)
         }
     }
 
@@ -55,16 +84,17 @@ export default function index(){
             }
 
             var isAccepted = obj["isAccepted"]
+            var isShow = obj["isShow"]
 
             return <li key={key} className="single-application-container">
-                <button className={`single-application ${isAccepted&&"accepted"}`} onClick={()=>updateShowRes(key)}>
+                <button className={`single-application ${isAccepted&&"accepted"} ${isShow&&'show'}`} onClick={()=>updateShowRes(key)}>
                     <div className="email">{obj["email"]}</div> 
                     {obj["showRes"]&&<ul className="responses-list">{responsesList}</ul>}
                 </button>
                 <button onClick={()=>updateAcceptanceStatus(key,!isAccepted)} className={`acceptbutton ${isAccepted?"accepted":"rejected"}`}>{isAccepted?"Reject":"Accept"}</button>
+                <button onClick={()=>updateShowStatus(key,!isShow)} className={`acceptbutton ${isAccepted?"accepted":"rejected"}`}>{isAccepted?"Hide":"Show"}</button>
             </li>
         })
-
         return arr
     }
 
@@ -72,11 +102,21 @@ export default function index(){
         getApps()
     },[])
 
+    
+    var totalCount = appsObj ? Object.keys(appsObj).length : 0
+
     return <div>
         <h2>Admin Panel</h2>
-        <p>All applications are listed below.</p>
+        <p>All applications are listed below. </p>
+        <p>Accepted: {acceptCount} | Rejected: {totalCount - acceptCount} | Total: {totalCount}</p>
         <ul className="applications-list">
             {generateList()}
-        </ul>        
+        </ul>   
+
+        {loading&&<div className="gob">
+            <div className="popup">
+                <Loading></Loading>
+            </div>    
+        </div>}     
     </div>
 }

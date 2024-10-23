@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 
 import {formFields,eventName} from "./../../content/content"
 
+const showResults = true
+
 export default function Home() {
   const context = useMyContext()
   const [form,setForm] = useState<any[]>([])
