@@ -1,12 +1,15 @@
 "use client"
 
 import Loading from "@/components/Loading"
+import Login from "@/components/Login"
+import { useMyContext } from "@/config/context"
 import { auth, db } from "@/config/firebase"
 import { formFields } from "@/content/content"
 import { collection, doc, getDocs, setDoc } from "firebase/firestore"
 import { useEffect, useState } from "react"
 
 export default function index(){
+    const context = useMyContext()
     const [appsObj,setAppsObj] = useState<any>({})
     const [loading,setLoading] = useState<boolean>(false)
     const [acceptCount,setAcceptCount] = useState<number>(0)
@@ -69,6 +72,7 @@ export default function index(){
             setLoading(false)
         }
     }
+    
 
     const generateList = () => {
         var arr = Object.keys(appsObj).map(key=>{
@@ -90,6 +94,7 @@ export default function index(){
                 <button className={`single-application ${isAccepted&&"accepted"} ${isShow&&'show'}`} onClick={()=>updateShowRes(key)}>
                     <div className="email">{obj["email"]}</div> 
                     {obj["showRes"]&&<ul className="responses-list">{responsesList}</ul>}
+                    {!obj["isSubmitted"]&&<label className="notSubmitted">Not Submitted</label>}
                 </button>
                 <button onClick={()=>updateAcceptanceStatus(key,!isAccepted)} className={`acceptbutton ${isAccepted?"accepted":"rejected"}`}>{isAccepted?"Reject":"Accept"}</button>
                 <button onClick={()=>updateShowStatus(key,!isShow)} className={`acceptbutton ${isShow?"accepted":"rejected"}`}>{isShow?"Hide":"Show"}</button>
@@ -99,15 +104,36 @@ export default function index(){
     }
 
     useEffect(()=>{
-        getApps()
-    },[])
+        if (Object.keys(appsObj).length ==0 ) getApps()
+    },[auth.currentUser])
+
+    const logout = async () => {
+        setLoading(true);
+        try{
+            await auth.signOut()
+        }catch(e){
+            console.error(e)
+        }finally{
+            setLoading(false)
+        }
+    }
 
     
     var totalCount = appsObj ? Object.keys(appsObj).length : 0
 
+    if (!context || !context.isAuth){
+        return <Login></Login>
+    }
+
+    if(context.isAuth && auth.currentUser?.email!="admin@princeton.edu"){
+        return <div>
+            <h2>Access Restricted</h2>
+            <p>Only admin account has access to admin page. <button className="logout-button" onClick={logout}>Logout</button></p>
+        </div>
+    }
     return <div>
         <h2>Admin Panel</h2>
-        <p>All applications are listed below. </p>
+        <p>All applications are listed below. <button className="logout-button" onClick={logout}>Logout</button></p>
         <p>Accepted: {acceptCount} | Rejected: {totalCount - acceptCount} | Total: {totalCount}</p>
         <ul className="applications-list">
             {generateList()}
