@@ -136,7 +136,7 @@ const formFields = [
         type:"text",
         required: true
     },
-]
+]  
 
 
 export { eventName,faqs, bulletpoints,nov2,nov3,formFields }
