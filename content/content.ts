@@ -35,7 +35,7 @@ const nov2 = [{
     time: "11:00AM",
     name: "Opening Ceremony",
     description: "Opening ceremony for event. All participants are required to attend.",
-    location: "TBD"
+    location: "Frist 302"
 },{
     time: "12:00PM",
     name: "Challenge Begins",
@@ -52,7 +52,7 @@ const nov3 = [{
     time: "1:00PM",
     name: "Closing Cermony",
     description: "Opening ceremony for event. All participants are required to attend.",
-    location: "TBD"
+    location: "Frist MPR B"
 }]
 
 /**
