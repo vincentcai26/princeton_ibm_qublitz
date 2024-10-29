@@ -33,7 +33,6 @@ export default function index(){
     const updateShowStatus = async (uid:string,showBool:boolean) => {
         var newAppsObj = {...appsObj}
         newAppsObj[uid]["isShow"] = showBool
-        setAcceptCount(acceptCount + (showBool?1:-1))
         setLoading(true)
         try{
             var d = doc(db,"applications",uid)
@@ -71,6 +70,19 @@ export default function index(){
         }finally{
             setLoading(false)
         }
+    }
+
+    const generateAcceptEmails = () => {
+        var res:any[] = []
+        Object.keys(appsObj).forEach(key=>{
+            var obj = appsObj[key]
+            var isAccepted = obj["isAccepted"]
+            if (isAccepted){
+                res.push(<div>{obj["email"]} </div>)
+            }
+
+        })
+        return res
     }
     
 
@@ -139,10 +151,15 @@ export default function index(){
             {generateList()}
         </ul>   
 
+        <div>
+            {generateAcceptEmails()}
+        </div>
+
         {loading&&<div className="gob">
             <div className="popup">
                 <Loading></Loading>
             </div>    
-        </div>}     
+        </div>} 
+    
     </div>
 }
