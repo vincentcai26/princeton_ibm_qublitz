@@ -213,6 +213,15 @@ export default function Home() {
   }
 
   return (
+    <div>
+      <div className="application-header">
+        <h2>{eventName}Applications No Longer Open</h2>
+      </div>
+      <p>We are not accepting anymore applications for Qublitz 2024</p>
+    </div>
+  )
+
+  return (
     <div> 
       <div className="application-header">
         <h2>{eventName} 2024 Application</h2>
