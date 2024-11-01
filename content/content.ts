@@ -17,7 +17,10 @@ const faqs = [{
     answer: "It will be a 24-hour hackathon, from noon on November 2nd to noon on November 3rd. In order to participate, you must attending opening and closing ceremonies (occuring 1 hour before and after hacking period)."
 }, {
     question: "What will I be doing at the hackathon?",
-    answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts will be based off implementing research papers in quantum computing. "
+    answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts will be based off implementing research papers in quantum computing. We will not have rooms available for the entirety of the hackathon duration, so you are expected to work on the prompts off-site."
+},{
+    question: "Can I attend?",
+    answer: "We have already sent out confirmations to accepted attendees. If you did not already receive an email notifying you of your acceptance, unfortunately, you will not be able to attend QuBlitz this year due to space limitations."
 }]
 
 const bulletpoints = [
@@ -41,6 +44,15 @@ const nov2 = [{
     name: "Challenge Begins",
     description: "Challenge prompts are released",
     location: ""
+},{
+    time: "12:00PM-1:00PM",
+    name: "Workshops",
+    description: "",
+    location: "Frist 200 Level Rooms",
+},{
+    time: "1:30PM-3:00PM",
+    name: "Office Hours",
+    description: "",
 }]
 
 const nov3 = [{
