@@ -151,6 +151,7 @@ export default function index(){
             {generateList()}
         </ul>   
 
+        <h3>List of Accepted Emails:</h3>
         <div>
             {generateAcceptEmails()}
         </div>

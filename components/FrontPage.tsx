@@ -34,7 +34,7 @@ export default function FrontPage(){
     return <div>
         <section className="row1">
             <div>
-                <h2>{eventName} 2024</h2>
+                <h2>{eventName} 2025</h2>
                 <p>Princeton Students in Quantum x IBM</p>
                 <QuantumCircuit></QuantumCircuit>
                 <div className="coords">
@@ -49,7 +49,7 @@ export default function FrontPage(){
                     <RxCross2 className="cross-icon"/>
                     <Image className="second-image" src={"./psqlogo.png"} alt="Qiskit Fall fest Logo" height={150} width={150}></Image>
                 </div>
-                <label>A Qiskit Fall Fest 2024 Event</label>
+                <label>A Qiskit Fall Fest 2025 Event</label>
             </div>
         </section>
         <section className="row2">
