@@ -19,7 +19,7 @@ export default function Header(){
 
     return <header>
         
-        <Link href="/"><h1>{eventName} 2024</h1></Link>
+        <Link href="/"><h1>{eventName} 2025</h1></Link>
         <div className="header-space"></div>
         <button className="menu-button" onClick={()=>setShowMenu(!showMenu)}><IoMenu></IoMenu></button>
         {showMenu&&<div className="menu">

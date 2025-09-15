@@ -23,7 +23,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: `${eventName} 2024`,
+  title: `${eventName} 2025`,
   description: `Website for ${eventName}`,
 };
 

@@ -196,7 +196,7 @@ export default function Home() {
       }else{
         content = <div>
           <h3>Application Status</h3>
-          <p>Thank you for applying to QuBlitz 2024. We are sorry to inform you that we are unable to have you attend our event due to limited space. We very much appreciate your interest and thank you for your application. Your email is {auth.currentUser?.email}.</p>
+          <p>Thank you for applying to QuBlitz 2025. We are sorry to inform you that we are unable to have you attend our event due to limited space. We very much appreciate your interest and thank you for your application. Your email is {auth.currentUser?.email}.</p>
         </div>
       }
     }else{
@@ -217,14 +217,14 @@ export default function Home() {
       <div className="application-header">
         <h2>Applications No Longer Open</h2>
       </div>
-      <p>We are not accepting anymore applications for Qublitz 2024</p>
+      <p>We are not accepting anymore applications for Qublitz 2025</p>
     </div>
   )
 
   return (
     <div> 
       <div className="application-header">
-        <h2>{eventName} 2024 Application</h2>
+        <h2>{eventName} 2025 Application</h2>
       </div>
       <p>Your email is {auth.currentUser?.email}. <button className="logout-button" onClick={logout}>Logout</button></p>
 
