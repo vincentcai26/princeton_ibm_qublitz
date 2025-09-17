@@ -63,7 +63,7 @@ const nov3 = [{
 //     description: "All submissions are due.",
 //     location: ""
 // },{
-    time: "1:00PM",
+    time: "3:00PM",
     name: "Closing Cermony",
     // description: "Opening ceremony for event. All participants are required to attend.",
     location: "TBD"
