@@ -36,32 +36,33 @@ const bulletpoints = [
  */
 
 const nov2 = [{
-    time: "11:00AM",
-    name: "Opening Ceremony",
-    description: "Opening ceremony for event. All participants are required to attend.",
-    location: "Frist 302"
-},{
-    time: "12:00PM",
-    name: "Challenge Begins",
-    description: "Challenge prompts are released",
-    location: ""
-},{
-    time: "12:00PM-1:00PM",
-    name: "Workshops",
-    description: "",
-    location: "Frist 200 Level Rooms",
-},{
-    time: "1:30PM-3:00PM",
-    name: "Office Hours",
-    description: "",
+    time: "9:00AM",
+    name: "Event Begins",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
 }]
+// },{
+//     time: "12:00PM",
+//     name: "Challenge Begins",
+//     description: "Challenge prompts are released",
+//     location: ""
+// },{
+//     time: "12:00PM-1:00PM",
+//     name: "Workshops",
+//     description: "",
+//     location: "Frist 200 Level Rooms",
+// },{
+//     time: "1:30PM-3:00PM",
+//     name: "Office Hours",
+//     description: "",
+// }]
 
 const nov3 = [{
-    time: "12:00PM",
-    name: "Submissions Due",
-    description: "All submissions are due.",
-    location: ""
-},{
+//     time: "12:00PM",
+//     name: "Submissions Due",
+//     description: "All submissions are due.",
+//     location: ""
+// },{
     time: "1:00PM",
     name: "Closing Cermony",
     description: "Opening ceremony for event. All participants are required to attend.",
