@@ -65,8 +65,8 @@ const nov3 = [{
 // },{
     time: "1:00PM",
     name: "Closing Cermony",
-    description: "Opening ceremony for event. All participants are required to attend.",
-    location: "Frist MPR B"
+    // description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
 }]
 
 /**
