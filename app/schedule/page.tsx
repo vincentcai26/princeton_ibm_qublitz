@@ -17,9 +17,9 @@ export default function page(){
     return <div id="schedule">
         <h3>Schedule</h3>
         <p>Subject to change</p>
-        <h4>November 2nd</h4>
+        <h4>November 15th</h4>
         {generateSchedule(nov2)}
-        <h4>November 3rd</h4>
+        <h4>November 16th</h4>
         {generateSchedule(nov3)}
     </div>
 }
