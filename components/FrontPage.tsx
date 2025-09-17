@@ -38,7 +38,7 @@ export default function FrontPage(){
                 <p>Princeton Students in Quantum x IBM</p>
                 <QuantumCircuit></QuantumCircuit>
                 <div className="coords">
-                    <div className="date"><FaCalendar className="calendar-icon"/> November 2-3, 2025</div>
+                    <div className="date"><FaCalendar className="calendar-icon"/> November 15-16, 2025</div>
                     <p><FaLocationDot className="location-icon" /> Princeton University</p>
 
                 </div>
