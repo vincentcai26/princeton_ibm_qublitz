@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --main: #f06aff;
+  --main: #1650ff;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -275,7 +275,7 @@ h2{
 }
 
 .row1 p .location-icon{
-  color: green;
+  color: var(--main);
   margin-right: 5px;
 }
 

@@ -54,7 +54,7 @@ export default function FrontPage(){
         </section>
         <section className="row2">
             <p>Princeton Students in Quantum, Princeton University’s only undergraduate and graduate 
-student organization for quantum computing, is hosting a quantum computing challenge hackathon from November 2nd-3rd. </p>
+student organization for quantum computing, is hosting a quantum computing challenge hackathon from November 15th-16th. </p>
         </section>
         <section className="row3">
             {bulletpoints.map(b=>{

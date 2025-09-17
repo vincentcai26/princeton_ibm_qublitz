@@ -7,20 +7,21 @@ const eventName = "QuBlitz"
 
 const faqs = [{
     question: `What is ${eventName}?`,
-    answer: "It is a 24 hour long hackathon at Princeton University, focused on quantum computing challenges. This event is supported by IBM and a participant in IBM's global 2025 Qiskit Fall Fest."
+    answer: "It is an in-person challenge hackathon at Princeton University, focused on quantum computing challenges. This event is supported by IBM and a participant in IBM's global 2025 Qiskit Fall Fest."
 },
 {
     question: "Where will the event take place?",
     answer: "At Princeton University in Princeton, NJ"
 },{
     question: "How long and at what time will the event be?",
-    answer: "It will be a 24-hour hackathon, from noon on November 2nd to noon on November 3rd. In order to participate, you must attending opening and closing ceremonies (occuring 1 hour before and after hacking period)."
+    answer: "It will start at 9AM on November 15th and end at 3PM on November 16th, in all EST. In order to participate, you must attending opening and closing ceremonies held during the event. "
 }, {
     question: "What will I be doing at the hackathon?",
     answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts will be based off implementing research papers in quantum computing. We will not have rooms available for the entirety of the hackathon duration, so you are expected to work on the prompts off-site."
 },{
     question: "Can I attend?",
-    answer: "We have already sent out confirmations to accepted attendees. If you did not already receive an email notifying you of your acceptance, unfortunately, you will not be able to attend QuBlitz this year due to space limitations."
+    answer: "We will be opening applications for the 2025 hackathon soon. Stay tuned!"
+    // answer: "We have already sent out confirmations to accepted attendees. If you did not already receive an email notifying you of your acceptance, unfortunately, you will not be able to attend QuBlitz this year due to space limitations."
 }]
 
 const bulletpoints = [
