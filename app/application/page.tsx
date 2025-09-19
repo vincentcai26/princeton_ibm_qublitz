@@ -215,9 +215,9 @@ export default function Home() {
   return (
     <div>
       <div className="application-header">
-        <h2>Applications No Longer Open</h2>
+        <h2>Applications Opening Soon!</h2>
       </div>
-      <p>We are not accepting anymore applications for Qublitz 2025</p>
+      <p>Stay tuned for when we open applications for Qublitz 2025</p>
     </div>
   )
 
