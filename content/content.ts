@@ -40,6 +40,23 @@ const nov2 = [{
     name: "Event Begins",
     //description: "Opening ceremony for event. All participants are required to attend.",
     location: "TBD"
+},
+{
+    time: "11:00AM",
+    name: "Opening Ceremony",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
+},
+{
+    time: "12:00PM",
+    name: "Challenges Released",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
+},{
+    time: "1:00-5:00PM",
+    name: "Workshops",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
 }]
 // },{
 //     time: "12:00PM",
@@ -58,6 +75,11 @@ const nov2 = [{
 // }]
 
 const nov3 = [{
+    time: "12:00PM",
+    name: "Submissions Due",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
+},{
 //     time: "12:00PM",
 //     name: "Submissions Due",
 //     description: "All submissions are due.",
