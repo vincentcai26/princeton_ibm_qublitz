@@ -7,7 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa";
 import { useState } from "react";
-import {faqs,bulletpoints,eventName} from "./../content/content"
+import {faqs,bulletpoints,eventName,year} from "./../content/content"
 
 
 export default function FrontPage(){
@@ -34,11 +34,11 @@ export default function FrontPage(){
     return <div>
         <section className="row1">
             <div>
-                <h2>{eventName} 2025</h2>
+                <h2>{eventName} {year}</h2>
                 <p>Princeton Students in Quantum x IBM</p>
                 <QuantumCircuit></QuantumCircuit>
                 <div className="coords">
-                    <div className="date"><FaCalendar className="calendar-icon"/> November 15-16, 2025</div>
+                    <div className="date"><FaCalendar className="calendar-icon"/> November 15-16, {year}</div>
                     <p><FaLocationDot className="location-icon" /> Princeton University</p>
 
                 </div>
@@ -49,7 +49,7 @@ export default function FrontPage(){
                     <RxCross2 className="cross-icon"/>
                     <Image className="second-image" src={"./psqlogo.png"} alt="Qiskit Fall fest Logo" height={150} width={150}></Image>
                 </div>
-                <label>A Qiskit Fall Fest 2025 Event</label>
+                <label>A Qiskit Fall Fest {year} Event</label>
             </div>
         </section>
         <section className="row2">

@@ -8,7 +8,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import {formFields,eventName} from "./../../content/content"
+import {formFields,eventName,applicationsStatus,year} from "./../../content/content"
 
 const showResults = true
 
@@ -37,7 +37,8 @@ export default function Home() {
       var qEl = <div></div>
       switch (f.type){
         case "text":
-          qEl = <input 
+          qEl = <input
+            className="form-input"
             data-number={count} 
             onChange={(e)=>changeState(Number(e.target.getAttribute("data-number")),e.target.value)}
             value={form ? form[count]:""}
@@ -173,6 +174,16 @@ export default function Home() {
     }
   }
 
+  // First check for applications status, don't show anything else if applications not open. 
+  if(applicationsStatus == 0){
+    return <div>
+      <div className="application-header">
+        <h2>Applications Opening Soon!</h2>
+      </div>
+      <p>Stay tuned for when we open applications for {eventName} {year}!</p>
+    </div>
+  } 
+
   if (!context || !context.isAuth){
     return <Login></Login>
   }
@@ -190,13 +201,13 @@ export default function Home() {
     if(isShow){
       if(isAccepted){
         content = <div>
-          <h3>Congratulations! You have been selected to attend QuBlitz!</h3>
+          <h3>Congratulations! You have been selected to attend {eventName}!</h3>
           <p>Please be on the lookout for an email from the organizers to confirm your attendance. Your email is {auth.currentUser?.email}.</p>
         </div>
       }else{
         content = <div>
           <h3>Application Status</h3>
-          <p>Thank you for applying to QuBlitz 2025. We are sorry to inform you that we are unable to have you attend our event due to limited space. We very much appreciate your interest and thank you for your application. Your email is {auth.currentUser?.email}.</p>
+          <p>Thank you for applying to {eventName}. We are sorry to inform you that we are unable to have you attend our event due to limited space. We very much appreciate your interest and thank you for your application. Your email is {auth.currentUser?.email}.</p>
         </div>
       }
     }else{
@@ -212,19 +223,19 @@ export default function Home() {
     </div>
   }
 
-  return (
-    <div>
+  if(applicationsStatus == 2){
+    return <div>
       <div className="application-header">
-        <h2>Applications Opening Soon!</h2>
+        <h2>Applications Currently Closed.</h2>
       </div>
-      <p>Stay tuned for when we open applications for Qublitz 2025</p>
+      <p>Applications are currently closed for {eventName} {year}!</p>
     </div>
-  )
+  }  
 
   return (
     <div> 
       <div className="application-header">
-        <h2>{eventName} 2025 Application</h2>
+        <h2>{eventName} {year} Application</h2>
       </div>
       <p>Your email is {auth.currentUser?.email}. <button className="logout-button" onClick={logout}>Logout</button></p>
 

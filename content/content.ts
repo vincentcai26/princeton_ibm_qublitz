@@ -1,5 +1,6 @@
 
 const eventName = "QuBlitz"
+const year = "2025"
 
 /**
  * HOMEPAGE
@@ -96,6 +97,9 @@ const nov3 = [{
  */
 
 
+// 0: Still Not Open 1: Open 2: Closed
+var applicationsStatus = 1 // Set to a var, since this will be compared (will give an error if a const)
+
 const formFields = [
     {
         title:"First Name",
@@ -159,7 +163,7 @@ const formFields = [
         required: true
     },
     {
-        title:"Will you be able to attend Princeton QuBlitz In-Person, from November 2nd to 3rd, at Princeton University in Princeton, NJ? This includes the opening and closing ceremonies at noon on November 2nd and 3rd, respectively.",
+        title:"Will you be able to attend Princeton QuBlitz In-Person, from November 15th to 16th, at Princeton University in Princeton, NJ? This includes the opening and closing ceremonies at noon on November 15th and 16th, respectively.",
         type:"mc",
         choices: [
         "Yes",
@@ -175,4 +179,4 @@ const formFields = [
 ]  
 
 
-export { eventName,faqs, bulletpoints,nov2,nov3,formFields }
+export { eventName,faqs, bulletpoints,nov2,nov3,formFields,year,applicationsStatus}

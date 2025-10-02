@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import { MyProvider } from "@/config/context";
 import { Instrument_Sans } from 'next/font/google'
 import Footer from "@/components/Footer";
-import {eventName} from "./../content/content"
+import {eventName,year} from "./../content/content"
  
 // If loading a variable font, you don't need to specify the font weight
 const instrumentsans = Instrument_Sans({ subsets: ["latin"]})
@@ -23,7 +23,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: `${eventName} 2025`,
+  title: `${eventName} ${year}`,
   description: `Website for ${eventName}`,
 };
 
