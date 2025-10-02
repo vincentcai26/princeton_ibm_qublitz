@@ -5,7 +5,7 @@ Script to backup "applications" collection in Firestore, to json
 
 
 // FILE PATHS
-file_path = "./backup/applications2025.json" //.json file to save data to
+file_path = "./backup/applications2024.json" //.json file to save data to
 firebase_service_key_path = "./firebaseservicekey.json"
 
 
