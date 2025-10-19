@@ -163,6 +163,11 @@ const formFields = [
         required: true
     },
     {
+        title:"If applicable, detail your past experiences with quantum computing. (100 Words)",
+        type:"longtext",
+        required: true
+    },
+    {
         title:"Will you be able to attend Princeton QuBlitz In-Person, from November 15th to 16th, at Princeton University in Princeton, NJ? This includes the opening and closing ceremonies at noon on November 15th and 16th, respectively.",
         type:"mc",
         choices: [
@@ -173,8 +178,8 @@ const formFields = [
     },
     {
         title:"Any questions?",
-        type:"text",
-        required: true
+        type:"longtext",
+        required: false
     },
 ]  
 

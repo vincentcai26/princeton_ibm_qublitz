@@ -39,6 +39,7 @@ export default function Home() {
         case "text":
           qEl = <input
             className="form-input"
+            placeholder="Enter Response Here"
             data-number={count} 
             onChange={(e)=>changeState(Number(e.target.getAttribute("data-number")),e.target.value)}
             value={form ? form[count]:""}
@@ -62,10 +63,20 @@ export default function Home() {
             </div>
             
           }
+          break;
+        case "longtext":
+          qEl = <textarea
+            className="form-longinput"
+            placeholder="Enter Response Here"
+            data-number={count}
+            onChange={(e)=>changeState(Number(e.target.getAttribute("data-number")),e.target.value)}
+            value={form ? form[count]:""}
+            draggable={false}
+          ></textarea>
       }
       if (!(f.dependentOn && form[f.dependentOn] != f.showOnAnswer)){
           res.push(<div className="app-question">
-          <h5>{f.title}</h5>
+          <h5>{f.title} {f.required&&<span className="required-symbol">Required</span>}</h5>
           {qEl}
         </div>)
       }
