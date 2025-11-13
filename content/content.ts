@@ -98,7 +98,7 @@ const nov3 = [{
 
 
 // 0: Still Not Open 1: Open 2: Closed
-var applicationsStatus = 1 // Set to a var, since this will be compared (will give an error if a const)
+var applicationsStatus = 2 // Set to a var, since this will be compared (will give an error if a const)
 
 const formFields = [
     {
@@ -163,7 +163,7 @@ const formFields = [
         required: true
     },
     {
-        title:"If applicable, detail your past experiences with quantum computing. (100 Words)",
+        title:"If applicable, detail your past experiences with quantum computing. (100 Words Max)",
         type:"longtext",
         required: true
     },
@@ -175,6 +175,11 @@ const formFields = [
         "No"
         ],
         required: true
+    },
+    {
+        title:"LinkedIn or other personal link:",
+        type:"text",
+        required: false
     },
     {
         title:"Any questions?",
