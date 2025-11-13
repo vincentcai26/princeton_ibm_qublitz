@@ -37,28 +37,39 @@ const bulletpoints = [
  */
 
 const nov2 = [{
-    time: "9:00AM",
-    name: "Event Begins",
+    time: "9:00-10:00AM",
+    name: "Breakfast and Team-Building",
     //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "TBD"
+    location: "Frist MPR"
+},
+{
+    time: "10:00-11:00AM",
+    name: "Opening Ceremony",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "Frist MPR"
 },
 {
     time: "11:00AM",
-    name: "Opening Ceremony",
-    //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "TBD"
-},
-{
-    time: "12:00PM",
     name: "Challenges Released",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    //location: "TBD"
+},{
+    time: "1:00-2:00PM",
+    name: "Beginner Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
     location: "TBD"
 },{
-    time: "1:00-5:00PM",
-    name: "Workshops",
+    time: "2:00-3:00PM",
+    name: "Hardware Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
     location: "TBD"
-}]
+},{
+    time: "3:00-4:00PM",
+    name: "Algorithm Challenge Workshop",
+    //description: "Opening ceremony for event. All participants are required to attend.",
+    location: "TBD"
+}
+]
 // },{
 //     time: "12:00PM",
 //     name: "Challenge Begins",
@@ -76,19 +87,18 @@ const nov2 = [{
 // }]
 
 const nov3 = [{
-    time: "12:00PM",
+    time: "10:00AM",
     name: "Submissions Due",
-    //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "TBD"
 },{
-//     time: "12:00PM",
-//     name: "Submissions Due",
-//     description: "All submissions are due.",
-//     location: ""
-// },{
-    time: "3:00PM",
+    time: "10:00AM-12:00PM",
+    name: "Presentations",
+    location: "Frist MPR"
+},{
+    time: "12:00-1:00PM",
+    name: "Lunch",
+},{
+    time: "1:00-2:00PM",
     name: "Closing Cermony",
-    // description: "Opening ceremony for event. All participants are required to attend.",
     location: "TBD"
 }]
 
