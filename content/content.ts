@@ -29,7 +29,7 @@ const bulletpoints = [
     "IBM and Qiskit Swag",
     "Beginner and Advanced Challenges",
     "Quantum Computing Workshops",
-    "Open to College and High School Students"
+    "Open to Princeton Students"
 ]
 
 /**
