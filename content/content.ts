@@ -99,7 +99,7 @@ const nov3 = [{
 },{
     time: "1:00-2:00PM",
     name: "Closing Cermony",
-    location: "TBD"
+    location: "Frist MPR"
 }]
 
 /**
