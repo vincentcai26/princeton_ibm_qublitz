@@ -15,13 +15,13 @@ const faqs = [{
     answer: "At Princeton University in Princeton, NJ"
 },{
     question: "How long and at what time will the event be?",
-    answer: "It will start at 9AM on November 15th and end at 3PM on November 16th, in all EST. In order to participate, you must attending opening and closing ceremonies held during the event. "
+    answer: "It will start at 9AM on November 15th and end at 3PM on November 16th, in all EST. In order to participate, you must attending opening ceremony and presentations held during the event. "
 }, {
     question: "What will I be doing at the hackathon?",
     answer: "We will have multiple challenges for beginners who have never done quantum computing as well as for more experienced participants. Our prompts will be based off implementing research papers in quantum computing. We will not have rooms available for the entirety of the hackathon duration, so you are expected to work on the prompts off-site."
 },{
     question: "Can I attend?",
-    answer: "We will be opening applications for the 2025 hackathon soon. Stay tuned!"
+    answer: "Unfortunately, if you have not received confirmation at this point, you cannot attend QuBlitz 2025. Please apply next year though!"
     // answer: "We have already sent out confirmations to accepted attendees. If you did not already receive an email notifying you of your acceptance, unfortunately, you will not be able to attend QuBlitz this year due to space limitations."
 }]
 
