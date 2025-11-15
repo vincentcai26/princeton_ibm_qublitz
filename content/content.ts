@@ -54,6 +54,9 @@ const nov2 = [{
     //description: "Opening ceremony for event. All participants are required to attend.",
     //location: "TBD"
 },{
+    time: "11:45PM",
+    name: "Lunch",
+},{
     time: "1:00-2:00PM",
     name: "Beginner Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
