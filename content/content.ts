@@ -38,7 +38,7 @@ const bulletpoints = [
 
 const nov2 = [{
     time: "9:00-10:00AM",
-    name: "Breakfast and Team-Building",
+    name: "Doors Open and Team-Building",
     //description: "Opening ceremony for event. All participants are required to attend.",
     location: "Frist MPR"
 },
