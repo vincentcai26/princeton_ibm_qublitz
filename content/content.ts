@@ -60,17 +60,17 @@ const nov2 = [{
     time: "1:00-2:00PM",
     name: "Beginner Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "Frist 303"
+    location: "Frist 309"
 },{
     time: "2:00-3:00PM",
     name: "Hardware Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "Frist 303"
+    location: "Frist 309"
 },{
     time: "3:00-4:00PM",
     name: "Algorithm Challenge Workshop",
     //description: "Opening ceremony for event. All participants are required to attend.",
-    location: "Frist 303"
+    location: "Frist 309"
 }
 ]
 // },{
